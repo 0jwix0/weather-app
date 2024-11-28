@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Report</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" differ></script>
+</head>
+<body>
+    <div id="clock">
+        <div id="hours"></div>
+        <div>:</div>
+        <div id="minutes"></div>
+        <div>:</div>
+        <div id="seconds"></div>
+    </div>
+    <div>
+        <button class="settings_button" onclick="settings()">Settings</button>
+        <button class="advanced" onclick="advanced()">advanced</button>
+    </div>
+    <div class="weather-card">
+        <div class="input_ui">
+            <button type="submit" id="apply"><img src="images/search.png"/></button>
+            <input type="text" id="search" placeholder="type the name of a country"/>
+        </div>
+        <div class="weth_icon_cont">
+            <img class="weather-icon">
+        </div>
+        <div class="temp_container">
+            <h1 class="weather-temp">----</h1>
+        </div>
+        <main class="weather-data">
+            <div class="humidity">
+                <img src="images/humidity.png" alt="Humidity icon">
+                <span class="humid_value">----</span>
+            </div>
+            <div class="wind">
+                <img src="images/wind.png" alt="Wind icon">
+                <span class="wind_value">----</span>
+            </div>
+        </main>
+        <div class="advanced_options">
+            <div id="time"></div>
+            <div class="advanced_icon" id="wind_direction" title="wind_direction (the black notch is the north)">
+                <img src="images/arrow.png"/>
+            </div>
+            <div class="advanced_icon" id="min_max" title="max, feels-like, and min temps">
+                <div>
+                    <p style="text-align: left;" class="max">----</p>
+                </div>
+                <div>
+                    <p style="text-align: center;" class="feels_like">----</p>
+                </div>
+                <div>
+                    <p style="text-align: right;" class="min">----</p>
+                </div>
+            </div>
+            <div id="sun_rise" class="advanced_icon" title="sun rise (your local time)">
+                <p>----</p>
+            </div>
+            <div id="sun_set" class="advanced_icon" title="sun set (your local time)">
+                <p>----</p>
+            </div>
+            <div id="visibility" class="advanced_icon" title="visibility (max value given by the api is 10Km or 6.2M)">
+                <p>----</p>
+            </div>
+        </div>
+    </div>
+    <div class="settings">
+        <div class="consol">
+            <div>unit setup</div>
+            <div>
+                <input type="radio" name="unit_temp" class="metric" checked/>
+                <label>Metric</label>
+            </div>
+            <div>
+                <input type="radio" name="unit_temp" class="imperial"/>
+                <label>Imperial</label>
+            </div>
+            <div>
+                <input type="radio" name="unit_temp" class="scientific"/>
+                <label>Scientific</label>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
